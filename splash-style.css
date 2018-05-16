@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+#main-view {
+  font-family: "Titillium Web", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: center;
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #main-view #main-title {
+    margin-left: 500px;
+    margin-top: 280px; }
+    #main-view #main-title h1 {
+      color: #f8d902;
+      font-size: 50px;
+      text-transform: uppercase; }
+      #main-view #main-title h1 span {
+        padding: 0 0.2em;
+        background-color: black; }
+    #main-view #main-title h2 {
+      padding: 0 0.2em;
+      background-color: #f8d902;
+      text-shadow: -1px 0 #f8d902, 0 1px #f8d902, 1px 0 #f8d902, 0 -1px #f8d902; }
+
+/* Testing */
+
+/*# sourceMappingURL=splash-style.css.map */
