@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box; }
 
+/* MAIN SCREEN / WELCOME PAGE */
 #main-view {
   font-family: "Titillium Web", sans-serif;
   width: 100%;
@@ -10,24 +11,63 @@
   position: center;
   background-image: url(images/bg.jpg);
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  /* TITLE OF PAGE */
+  /* NAVIGATION */ }
   #main-view #main-title {
-    margin-left: 500px;
-    margin-top: 280px; }
+    position: fixed;
+    margin-left: 1100px;
+    margin-top: 550px; }
     #main-view #main-title h1 {
       color: #f8d902;
+      text-transform: uppercase;
+      min-width: 400px;
       font-size: 50px;
-      text-transform: uppercase; }
+      transition: ease-in 400ms; }
       #main-view #main-title h1 span {
         padding: 0 0.2em;
         background-color: black; }
     #main-view #main-title h2 {
       padding: 0 0.2em;
-      background-color: #f8d902;
-      text-shadow: -1px 0 #f8d902, 0 1px #f8d902, 1px 0 #f8d902, 0 -1px #f8d902; }
+      background-color: #f8d902; }
+  #main-view nav {
+    position: fixed;
+    margin-left: 300px;
+    margin-top: 200px;
+    font-size: 28px;
+    color: #f8d902; }
+    #main-view nav span#nav {
+      font-size: 20px;
+      background-color: black;
+      display: none;
+      word-spacing: 5px;
+      padding: 0 0.4em;
+      border: 1px solid black; }
+    #main-view nav span#nav.show {
+      display: inline-block;
+      animation: nav-animation 500ms ease-in-out forwards; }
+    #main-view nav a {
+      color: #f8d902;
+      text-decoration: none; }
+    #main-view nav span#menu-btn {
+      cursor: pointer; }
+    #main-view nav span#menu-btn:hover {
+      font-size: 33px; }
 
+/* Animations */
+@keyframes nav-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px); }
+  100% {
+    transform: translateX(0px);
+    opacity: 1; } }
+/* Responsive Design */
+@media (max-width: 1000px) {
+  h1 span {
+    font-size: 30px; }
+
+  h2 {
+    font-size: 15px; } }
 /* Testing */
 
 /*# sourceMappingURL=splash-style.css.map */

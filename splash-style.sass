@@ -1,13 +1,15 @@
 
 $main-yellow: #f8d902
-$main-title-offsetX: 500px
-$main-title-offsetY: 280px
+$main-title-offsetX: 1100px
+$main-title-offsetY: 550px
 
 *
   margin: 0px
   padding: 0px
   box-sizing: border-box
 
+
+/* MAIN SCREEN / WELCOME PAGE */
 
 #main-view
   font-family: 'Titillium Web', sans-serif
@@ -19,19 +21,20 @@ $main-title-offsetY: 280px
     image: url(images/bg.jpg)
     size: cover
 
-  display: flex
-  align-items: center
-  justify-content: center
 
-  // main title of page
+
+  /* TITLE OF PAGE */
   #main-title
+    position: fixed
     margin-left: $main-title-offsetX
     margin-top: $main-title-offsetY
 
     h1
       color: $main-yellow
-      font-size: 50px
       text-transform: uppercase
+      min-width: 400px
+      font-size: 50px
+      transition: ease-in 400ms
       span
         // two values for padding indicate top-bottom paddings then right left paddings
         padding: 0 0.2em
@@ -39,13 +42,55 @@ $main-title-offsetY: 280px
     h2
       padding: 0 0.2em
       background-color: $main-yellow
-      text-shadow: -1px 0 $main-yellow, 0 1px $main-yellow, 1px 0 $main-yellow, 0 -1px $main-yellow
+
+  /* NAVIGATION */
+  nav
+    // so that nav position does not push down other elements
+    position: fixed
+    margin-left: 300px
+    margin-top: 200px
+    font-size: 28px
+    color: $main-yellow
+    span#nav
+      font-size: 20px
+      background-color: black
+      display: none
+      word-spacing: 5px
+      padding: 0 0.4em
+      border: 1px solid black
+    span#nav.show
+      display: inline-block
+      animation: nav-animation 500ms ease-in-out forwards
+    a
+      color: $main-yellow
+      text-decoration: none
+
+    span#menu-btn
+      cursor: pointer
+    span#menu-btn:hover
+      font-size: 33px
+
+
+/* Animations */
+
+@keyframes nav-animation
+  0%
+    opacity: 0
+    transform: translateX(-300px)
+  100%
+    transform: translateX(0px)
+    opacity: 1
 
 
 
+/* Responsive Design */
 
-
-
+@media (max-width: 1000px)
+  h1
+    span
+      font-size: 30px
+  h2
+    font-size: 15px
 
 
 /* Testing */
