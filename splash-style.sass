@@ -1,18 +1,18 @@
 
 $main-yellow: #f8d902
 $main-title-offsetX: 1100px
-$main-title-offsetY: 550px
+$main-title-offsetY: 585px
+$main-font: 'Titillium Web', sans-serif
 
 *
   margin: 0px
   padding: 0px
   box-sizing: border-box
 
-
 /* MAIN SCREEN / WELCOME PAGE */
 
 #main-view
-  font-family: 'Titillium Web', sans-serif
+  font-family: $main-font
   width: 100%
   height: 100vh
   // center splash background
@@ -22,8 +22,8 @@ $main-title-offsetY: 550px
     size: cover
 
 
-
   /* TITLE OF PAGE */
+
   #main-title
     position: fixed
     margin-left: $main-title-offsetX
@@ -33,17 +33,20 @@ $main-title-offsetY: 550px
       color: $main-yellow
       text-transform: uppercase
       min-width: 400px
-      font-size: 50px
+      font-size: 45px
       transition: ease-in 400ms
       span
         // two values for padding indicate top-bottom paddings then right left paddings
         padding: 0 0.2em
         background-color: black
     h2
+      font-size: 23px
       padding: 0 0.2em
       background-color: $main-yellow
 
+
   /* NAVIGATION */
+
   nav
     // so that nav position does not push down other elements
     position: fixed
@@ -58,17 +61,73 @@ $main-title-offsetY: 550px
       word-spacing: 5px
       padding: 0 0.4em
       border: 1px solid black
+      // individual nav buttons
+      .resume:hover
+        cursor: pointer
+        font-size: 24px
+      .about:hover
+        cursor: pointer
+        font-size: 24px
+      .projects:hover
+        cursor: pointer
+        font-size: 24px
+      .contact:hover
+        cursor: pointer
+        font-size: 24px
+
     span#nav.show
       display: inline-block
       animation: nav-animation 500ms ease-in-out forwards
     a
       color: $main-yellow
       text-decoration: none
+      // slow transition when cursor over nav options
+      transition: all 200ms ease-in-out
 
     span#menu-btn
+      font-size: 25px
+      transition: all 200ms ease-in-out
       cursor: pointer
+
     span#menu-btn:hover
       font-size: 33px
+
+
+.overlay
+  // so that it stays at the first landing page and overlays it
+  position: absolute
+  background: black
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0.7
+  display: none
+  transition: all 200ms ease-in-out
+  text-align: center
+  font-family: $main-font
+
+  .content
+    width: 700px
+    height: 400px
+    padding: 0 0.2em
+    opacity: 1
+    border: 15px solid black
+    background: $main-yellow
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .contact
+      font-size: 25px
+      font-weight: bold
+
+.overlay.show
+  display: flex
+  align-items: center
+  justify-content: center
+
+
 
 
 /* Animations */
