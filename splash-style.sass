@@ -61,7 +61,7 @@ $main-font: 'Titillium Web', sans-serif
       word-spacing: 5px
       padding: 0 0.4em
       border: 1px solid black
-      // individual nav buttons
+      // individual nav button hover animations
       .resume:hover
         cursor: pointer
         font-size: 24px
@@ -74,6 +74,16 @@ $main-font: 'Titillium Web', sans-serif
       .contact:hover
         cursor: pointer
         font-size: 24px
+      // close button
+      .nav-close
+        display: none
+        transition: all 300ms ease-in-out
+        &:hover
+          cursor: pointer
+          transform: translate(-3px, 3px)
+      .nav-close.show
+        display: inline-block
+
 
     span#nav.show
       display: inline-block
@@ -101,11 +111,22 @@ $main-font: 'Titillium Web', sans-serif
   left: 0
   right: 0
   bottom: 0
-  opacity: 0.7
   display: none
-  transition: all 200ms ease-in-out
-  text-align: center
+  animation: overlay 400ms ease-in-out forwards
   font-family: $main-font
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.4)
+
+  .close-btn 
+    position: absolute
+    height: 30px
+    width: 30px
+    font-size: 30px
+    color: #636e72
+    cursor: pointer
+    transition: all 200ms ease-in-out
+    transform: translateY(-188px) translateX(338px)
+
+
 
   .content
     width: 700px
@@ -121,6 +142,11 @@ $main-font: 'Titillium Web', sans-serif
     .contact
       font-size: 25px
       font-weight: bold
+
+  .intro
+    position: fixed
+
+
 
 .overlay.show
   display: flex
@@ -140,6 +166,12 @@ $main-font: 'Titillium Web', sans-serif
     transform: translateX(0px)
     opacity: 1
 
+// overlay animation
+@keyframes overlay
+  0%
+    opacity: 0
+  100%
+    opacity: 0.7
 
 
 /* Responsive Design */
