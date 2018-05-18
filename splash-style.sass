@@ -1,7 +1,7 @@
 
 $main-yellow: #f8d902
-$main-title-offsetX: 1100px
-$main-title-offsetY: 585px
+$main-title-offsetX: 270px
+$main-title-offsetY: 580px
 $main-font: 'Titillium Web', sans-serif
 
 *
@@ -14,7 +14,9 @@ $main-font: 'Titillium Web', sans-serif
 #main-view
   font-family: $main-font
   width: 100%
+  min-width: 1200px
   height: 100vh
+  overflow: hidden
   // center splash background
   position: center
   background:
@@ -25,9 +27,9 @@ $main-font: 'Titillium Web', sans-serif
   /* TITLE OF PAGE */
 
   #main-title
-    position: fixed
-    margin-left: $main-title-offsetX
     margin-top: $main-title-offsetY
+    margin-right: $main-title-offsetX
+    float: right
 
     h1
       color: $main-yellow
@@ -43,17 +45,20 @@ $main-font: 'Titillium Web', sans-serif
       font-size: 23px
       padding: 0 0.2em
       background-color: $main-yellow
+      max-width: 470px
 
 
   /* NAVIGATION */
 
   nav
     // so that nav position does not push down other elements
-    position: fixed
+    overflow: hidden
+    min-width: 450px
     margin-left: 300px
     margin-top: 200px
     font-size: 28px
     color: $main-yellow
+
     span#nav
       font-size: 20px
       background-color: black
@@ -103,6 +108,50 @@ $main-font: 'Titillium Web', sans-serif
       font-size: 33px
 
 
+  /* About Content */
+
+  #about 
+    display: none
+    margin-left: 10%
+    margin-top: 7%
+    max-width: 500px
+    min-width: 500px
+    height: 420px
+    padding: 0 0.4em
+    background-color: black
+    opacity: 0.9
+    animation: about 300ms ease-in-out forwards
+    p
+      font-family: $main-font
+      font-size: 18px
+      color: $main-yellow
+
+    h2
+      margin-top: 5px
+      width: 100%
+      text-align: left
+      font-family: $main-font
+      color: $main-yellow
+
+    &.show
+      display: block
+    
+    .close-about
+      opacity: 0
+      margin-top: -50px
+      margin-left: 450px
+      display: inline-block
+      color: $main-yellow
+      transition: all 200ms ease-in-out
+      &:hover
+        cursor: pointer
+        transform: scale(1.3)
+      &.show
+        opacity: 1
+
+
+// Contact Content
+
 .overlay
   // so that it stays at the first landing page and overlays it
   position: absolute
@@ -116,7 +165,7 @@ $main-font: 'Titillium Web', sans-serif
   font-family: $main-font
   box-shadow: 0px 4px 20px rgba(0,0,0,0.4)
 
-  .close-btn 
+  .close-btn
     position: absolute
     height: 30px
     width: 30px
@@ -125,8 +174,6 @@ $main-font: 'Titillium Web', sans-serif
     cursor: pointer
     transition: all 200ms ease-in-out
     transform: translateY(-188px) translateX(338px)
-
-
 
   .content
     width: 700px
@@ -156,6 +203,7 @@ $main-font: 'Titillium Web', sans-serif
 
 
 
+
 /* Animations */
 
 @keyframes nav-animation
@@ -166,22 +214,36 @@ $main-font: 'Titillium Web', sans-serif
     transform: translateX(0px)
     opacity: 1
 
-// overlay animation
+// contact overlay animation
 @keyframes overlay
   0%
     opacity: 0
   100%
     opacity: 0.7
 
+// about section animation 
+@keyframes about
+  0%
+    transform: translateX(-1000px)
+  100%  
+    transform: translateX(0px)
+
 
 /* Responsive Design */
 
 @media (max-width: 1000px)
-  h1
+
+  #main-title h1
     span
-      font-size: 30px
-  h2
-    font-size: 15px
+      margin-left: 350px
+      font-size: 20px
+
+
+@media (max-width: 1000px)
+
+  #main-title h2
+    margin-left: 350px
+    font-size: 12px
 
 
 /* Testing */

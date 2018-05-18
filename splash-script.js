@@ -5,9 +5,9 @@
 // global vars
 
 let navContact = document.querySelector('.nav .contact');
-let navResume = document.querySelector('.nav .about');
-let navProjects = document.querySelector('.nav .resume');
-let navAbout = document.querySelector('.nav .projects');
+let navAbout = document.querySelector('.nav .about');
+let navResume = document.querySelector('.nav .resume');
+let navProjects = document.querySelector('.nav .projects');
 
 
 // Show Menu
@@ -51,7 +51,7 @@ closeMenu.addEventListener("click", () => navMenu.classList.remove("show"));
 // individual nav buttons
 let overlay = document.querySelector(".overlay");
 navResume.addEventListener("click", () => overlay.classList.add("show"));
-navAbout.addEventListener("click", () => overlay.classList.add("show"));
+
 navProjects.addEventListener("click", () => overlay.classList.add("show"));
 navContact.addEventListener("click", () => overlay.classList.add("show"));
 
@@ -63,6 +63,19 @@ overlayBtn.addEventListener("click", () => overlay.classList.remove("show"));
 
 
 
+// About
+let aboutSection = document.getElementById("about"); 
+let closeAbout = document.querySelector("#about .close-about");
+
+// show about section when about is clicked in nav menu
+navAbout.addEventListener("click", () => aboutSection.classList.add("show"));
+
+// show and hide close button when mouse enters about section area
+aboutSection.addEventListener("mouseenter", () => closeAbout.classList.add("show"));
+aboutSection.addEventListener("mouseleave", () => closeAbout.classList.remove("show"));
+
+// close button closes about section
+closeAbout.addEventListener("click", () => aboutSection.classList.remove("show"));
 
 
 /* test */
