@@ -1,5 +1,5 @@
 
-$main-yellow: #f8d902
+$main-theme: #EAB543
 $main-title-offsetX: 270px
 $main-title-offsetY: 580px
 $main-font: 'Titillium Web', sans-serif
@@ -8,6 +8,7 @@ $main-font: 'Titillium Web', sans-serif
   margin: 0px
   padding: 0px
   box-sizing: border-box
+  
 
 /* MAIN SCREEN / WELCOME PAGE */
 
@@ -20,7 +21,7 @@ $main-font: 'Titillium Web', sans-serif
   // center splash background
   position: center
   background:
-    image: url(images/bg.jpg)
+    image: url(images/image1.jpg)
     size: cover
 
 
@@ -32,7 +33,7 @@ $main-font: 'Titillium Web', sans-serif
     float: right
 
     h1
-      color: $main-yellow
+      color: $main-theme
       text-transform: uppercase
       min-width: 400px
       font-size: 45px
@@ -44,7 +45,7 @@ $main-font: 'Titillium Web', sans-serif
     h2
       font-size: 23px
       padding: 0 0.2em
-      background-color: $main-yellow
+      background-color: $main-theme
       max-width: 470px
 
 
@@ -57,7 +58,7 @@ $main-font: 'Titillium Web', sans-serif
     margin-left: 300px
     margin-top: 200px
     font-size: 28px
-    color: $main-yellow
+    color: $main-theme
 
     span#nav
       font-size: 20px
@@ -94,7 +95,7 @@ $main-font: 'Titillium Web', sans-serif
       display: inline-block
       animation: nav-animation 500ms ease-in-out forwards
     a
-      color: $main-yellow
+      color: $main-theme
       text-decoration: none
       // slow transition when cursor over nav options
       transition: all 200ms ease-in-out
@@ -124,24 +125,25 @@ $main-font: 'Titillium Web', sans-serif
     p
       font-family: $main-font
       font-size: 18px
-      color: $main-yellow
+      color: $main-theme
 
     h2
-      margin-top: 5px
+      margin-top: -25px
+      margin-bottom: 25px
       width: 100%
       text-align: left
       font-family: $main-font
-      color: $main-yellow
+      color: $main-theme
 
     &.show
       display: block
     
     .close-about
       opacity: 0
-      margin-top: -50px
-      margin-left: 450px
+      margin-top: -40px
+      margin-left: 476px
       display: inline-block
-      color: $main-yellow
+      color: $main-theme
       transition: all 200ms ease-in-out
       &:hover
         cursor: pointer
@@ -152,6 +154,10 @@ $main-font: 'Titillium Web', sans-serif
 
 // Contact Content
 
+$content-width: 500px
+$content-height: 400px
+
+
 .overlay
   // so that it stays at the first landing page and overlays it
   position: absolute
@@ -161,44 +167,57 @@ $main-font: 'Titillium Web', sans-serif
   right: 0
   bottom: 0
   display: none
-  animation: overlay 400ms ease-in-out forwards
   font-family: $main-font
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.4)
+  animation: overlay 400ms ease-in-out forwards
 
-  .close-btn
-    position: absolute
-    height: 30px
-    width: 30px
-    font-size: 30px
-    color: #636e72
-    cursor: pointer
-    transition: all 200ms ease-in-out
-    transform: translateY(-188px) translateX(338px)
-
-  .content
-    width: 700px
-    height: 400px
-    padding: 0 0.2em
-    opacity: 1
-    border: 15px solid black
-    background: $main-yellow
+  &.show
     display: flex
     align-items: center
     justify-content: center
 
-    .contact
-      font-size: 25px
-      font-weight: bold
+  
+.content
+  position: absolute
+  display: none
+
+  // centers content box on page
+  top: 50%
+  left: 50%
+  right: 0
+  bottom: 0
+  margin-left: -$content-width*0.5
+  margin-top: -$content-height*0.5
+  width: $content-width
+  height: $content-height
+  padding: 0 0.2em
+  opacity: 1
+  border: 3px solid black
+  background: $main-theme
+  font-family: $main-font
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.4)
+  animation: overlay2 500ms ease-in-out forwards
+
+  .contact
+    font-size: 22px
+    font-weight: bold
+  
+  .close-btn
+    position: absolute
+    top: -28px
+    right: -28px
+    font-size: 30px
+    color: #636e72
+    cursor: pointer
+    transition: all 200ms ease-in-out
 
   .intro
     position: fixed
 
+  &.show
+    display: flex
+    align-items: center
+    justify-content: center
 
-
-.overlay.show
-  display: flex
-  align-items: center
-  justify-content: center
 
 
 
@@ -215,11 +234,20 @@ $main-font: 'Titillium Web', sans-serif
     opacity: 1
 
 // contact overlay animation
+
+// overlay opaque background
 @keyframes overlay
   0%
     opacity: 0
   100%
     opacity: 0.7
+
+// overlay content
+@keyframes overlay2
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 
 // about section animation 
 @keyframes about

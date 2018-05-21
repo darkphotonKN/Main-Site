@@ -11,7 +11,7 @@
   height: 100vh;
   overflow: hidden;
   position: center;
-  background-image: url(images/bg.jpg);
+  background-image: url(images/image1.jpg);
   background-size: cover;
   /* TITLE OF PAGE */
   /* NAVIGATION */
@@ -21,7 +21,7 @@
     margin-right: 270px;
     float: right; }
     #main-view #main-title h1 {
-      color: #f8d902;
+      color: #EAB543;
       text-transform: uppercase;
       min-width: 400px;
       font-size: 45px;
@@ -32,7 +32,7 @@
     #main-view #main-title h2 {
       font-size: 23px;
       padding: 0 0.2em;
-      background-color: #f8d902;
+      background-color: #EAB543;
       max-width: 470px; }
   #main-view nav {
     overflow: hidden;
@@ -40,7 +40,7 @@
     margin-left: 300px;
     margin-top: 200px;
     font-size: 28px;
-    color: #f8d902; }
+    color: #EAB543; }
     #main-view nav span#nav {
       font-size: 20px;
       background-color: black;
@@ -72,7 +72,7 @@
       display: inline-block;
       animation: nav-animation 500ms ease-in-out forwards; }
     #main-view nav a {
-      color: #f8d902;
+      color: #EAB543;
       text-decoration: none;
       transition: all 200ms ease-in-out; }
     #main-view nav span#menu-btn {
@@ -95,21 +95,22 @@
     #main-view #about p {
       font-family: "Titillium Web", sans-serif;
       font-size: 18px;
-      color: #f8d902; }
+      color: #EAB543; }
     #main-view #about h2 {
-      margin-top: 5px;
+      margin-top: -25px;
+      margin-bottom: 25px;
       width: 100%;
       text-align: left;
       font-family: "Titillium Web", sans-serif;
-      color: #f8d902; }
+      color: #EAB543; }
     #main-view #about.show {
       display: block; }
     #main-view #about .close-about {
       opacity: 0;
-      margin-top: -50px;
-      margin-left: 450px;
+      margin-top: -40px;
+      margin-left: 476px;
       display: inline-block;
-      color: #f8d902;
+      color: #EAB543;
       transition: all 200ms ease-in-out; }
       #main-view #about .close-about:hover {
         cursor: pointer;
@@ -125,38 +126,48 @@
   right: 0;
   bottom: 0;
   display: none;
-  animation: overlay 400ms ease-in-out forwards;
   font-family: "Titillium Web", sans-serif;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); }
-  .overlay .close-btn {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    font-size: 30px;
-    color: #636e72;
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-    transform: translateY(-188px) translateX(338px); }
-  .overlay .content {
-    width: 700px;
-    height: 400px;
-    padding: 0 0.2em;
-    opacity: 1;
-    border: 15px solid black;
-    background: #f8d902;
+  animation: overlay 400ms ease-in-out forwards; }
+  .overlay.show {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .overlay .content .contact {
-      font-size: 25px;
-      font-weight: bold; }
-  .overlay .intro {
-    position: fixed; }
 
-.overlay.show {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+.content {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  margin-left: -250px;
+  margin-top: -200px;
+  width: 500px;
+  height: 400px;
+  padding: 0 0.2em;
+  opacity: 1;
+  border: 3px solid black;
+  background: #EAB543;
+  font-family: "Titillium Web", sans-serif;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  animation: overlay2 500ms ease-in-out forwards; }
+  .content .contact {
+    font-size: 22px;
+    font-weight: bold; }
+  .content .close-btn {
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    font-size: 30px;
+    color: #636e72;
+    cursor: pointer;
+    transition: all 200ms ease-in-out; }
+  .content .intro {
+    position: fixed; }
+  .content.show {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 /* Animations */
 @keyframes nav-animation {
@@ -171,6 +182,11 @@
     opacity: 0; }
   100% {
     opacity: 0.7; } }
+@keyframes overlay2 {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 @keyframes about {
   0% {
     transform: translateX(-1000px); }
