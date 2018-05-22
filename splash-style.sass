@@ -1,13 +1,14 @@
 
-$main-theme: #1e90ff//#f8d902 
+$main-theme: #EAB543
 $main-title-offsetX: 270px
 $main-title-offsetY: 580px
-$main-font: 'Titillium Web', sans-serif
+$main-font: 'Neucha', sans-serif
 
 *
   margin: 0px
   padding: 0px
   box-sizing: border-box
+
   
 
 /* MAIN SCREEN / WELCOME PAGE */
@@ -21,11 +22,13 @@ $main-font: 'Titillium Web', sans-serif
   // center splash background
   position: center
   background:
-    image: url(images/image1.jpg)
+    image: url(images/7.jpg)
     size: cover
 
 
   /* TITLE OF PAGE */
+
+  $title-font: 'Titillium Web', sans-serif
 
   #main-title
     margin-top: $main-title-offsetY
@@ -33,15 +36,16 @@ $main-font: 'Titillium Web', sans-serif
     float: right
 
     h1
-      color: $main-theme
-      text-transform: uppercase
+      color: black
+      //text-transform: uppercase
       min-width: 400px
       font-size: 45px
+      font-family: $title-font
       transition: ease-in 400ms
       span
         // two values for padding indicate top-bottom paddings then right left paddings
         padding: 0 0.2em
-        background-color: black
+        background-color: none
     h2
       font-size: 23px
       padding: 0 0.2em
@@ -61,25 +65,25 @@ $main-font: 'Titillium Web', sans-serif
     color: $main-theme
 
     span#nav
-      font-size: 20px
-      background-color: black
+      font-size: 22px
+      background-color: none
       display: none
       word-spacing: 5px
       padding: 0 0.4em
-      border: 1px solid black
+      //border: 1px solid black
       // individual nav button hover animations
       .resume-nav:hover
         cursor: pointer
-        font-size: 24px
+        font-size: 26px
       .about-nav:hover
         cursor: pointer
-        font-size: 24px
+        font-size: 26px
       .projects-nav:hover
         cursor: pointer
-        font-size: 24px
+        font-size: 26px
       .contact-nav:hover
         cursor: pointer
-        font-size: 24px
+        font-size: 26px
       // close button
       .nav-close
         display: none
@@ -89,7 +93,10 @@ $main-font: 'Titillium Web', sans-serif
           transform: translate(-3px, 3px)
       .nav-close.show
         display: inline-block
-
+    
+      .resume-nav, .about-nav, .projects-nav, .contact-nav
+        text-transform: uppercase
+        color: #f1f2f6
 
     span#nav.show
       display: inline-block
@@ -124,11 +131,11 @@ $main-font: 'Titillium Web', sans-serif
     animation: about 300ms ease-in-out forwards
     p
       font-family: $main-font
-      font-size: 18px
+      font-size: 20px
       color: $main-theme
 
     h2
-      margin-top: -25px
+      margin-top: -5px
       margin-bottom: 25px
       width: 100%
       text-align: left
@@ -140,7 +147,7 @@ $main-font: 'Titillium Web', sans-serif
     
     .close-about
       opacity: 0
-      margin-top: -40px
+      margin-top: 2px
       margin-left: 476px
       display: inline-block
       color: $main-theme
@@ -191,13 +198,14 @@ $content-height: 400px
   padding: 0 0.2em
   opacity: 1
   border: 3px solid black
-  background: $main-theme
+  background: black
+  color: $main-theme
   font-family: $main-font
   box-shadow: 0px 4px 20px rgba(0,0,0,0.4)
   animation: overlay2 500ms ease-in-out forwards
 
   .contact
-    font-size: 22px
+    font-size: 20px
     font-weight: bold
   
   .close-btn
@@ -205,7 +213,7 @@ $content-height: 400px
     right: 0.5em
     top: 0.5em
     font-size: 30px
-    color: #636e72
+    color: $main-theme // #636e72
     cursor: pointer
     transition: all 200ms ease-in-out
 
@@ -262,11 +270,12 @@ $cv-btn-height: 35px
     cursor: pointer
   
   $resCloseBtnSize: 30px
+
   .close-btn
     position: absolute
     left: $cv-width - $resCloseBtnSize // keep it to the exact right of resume page
     font-size: $resCloseBtnSize
-    color: #636e72
+    color: $main-theme // #636e72
     cursor: pointer
     transition: all 200ms ease-in-out
 

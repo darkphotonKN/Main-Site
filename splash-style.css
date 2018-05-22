@@ -5,13 +5,13 @@
 
 /* MAIN SCREEN / WELCOME PAGE */
 #main-view {
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Neucha", sans-serif;
   width: 100%;
   min-width: 1200px;
   height: 100vh;
   overflow: hidden;
   position: center;
-  background-image: url(images/image1.jpg);
+  background-image: url(images/7.jpg);
   background-size: cover;
   /* TITLE OF PAGE */
   /* NAVIGATION */
@@ -21,18 +21,18 @@
     margin-right: 270px;
     float: right; }
     #main-view #main-title h1 {
-      color: #1e90ff;
-      text-transform: uppercase;
+      color: black;
       min-width: 400px;
       font-size: 45px;
+      font-family: "Titillium Web", sans-serif;
       transition: ease-in 400ms; }
       #main-view #main-title h1 span {
         padding: 0 0.2em;
-        background-color: black; }
+        background-color: none; }
     #main-view #main-title h2 {
       font-size: 23px;
       padding: 0 0.2em;
-      background-color: #1e90ff;
+      background-color: #EAB543;
       max-width: 470px; }
   #main-view nav {
     overflow: hidden;
@@ -40,26 +40,25 @@
     margin-left: 300px;
     margin-top: 200px;
     font-size: 28px;
-    color: #1e90ff; }
+    color: #EAB543; }
     #main-view nav span#nav {
-      font-size: 20px;
-      background-color: black;
+      font-size: 22px;
+      background-color: none;
       display: none;
       word-spacing: 5px;
-      padding: 0 0.4em;
-      border: 1px solid black; }
+      padding: 0 0.4em; }
       #main-view nav span#nav .resume-nav:hover {
         cursor: pointer;
-        font-size: 24px; }
+        font-size: 26px; }
       #main-view nav span#nav .about-nav:hover {
         cursor: pointer;
-        font-size: 24px; }
+        font-size: 26px; }
       #main-view nav span#nav .projects-nav:hover {
         cursor: pointer;
-        font-size: 24px; }
+        font-size: 26px; }
       #main-view nav span#nav .contact-nav:hover {
         cursor: pointer;
-        font-size: 24px; }
+        font-size: 26px; }
       #main-view nav span#nav .nav-close {
         display: none;
         transition: all 300ms ease-in-out; }
@@ -68,11 +67,14 @@
           transform: translate(-3px, 3px); }
       #main-view nav span#nav .nav-close.show {
         display: inline-block; }
+      #main-view nav span#nav .resume-nav, #main-view nav span#nav .about-nav, #main-view nav span#nav .projects-nav, #main-view nav span#nav .contact-nav {
+        text-transform: uppercase;
+        color: #f1f2f6; }
     #main-view nav span#nav.show {
       display: inline-block;
       animation: nav-animation 500ms ease-in-out forwards; }
     #main-view nav a {
-      color: #1e90ff;
+      color: #EAB543;
       text-decoration: none;
       transition: all 200ms ease-in-out; }
     #main-view nav span#menu-btn {
@@ -93,24 +95,24 @@
     opacity: 0.9;
     animation: about 300ms ease-in-out forwards; }
     #main-view #about p {
-      font-family: "Titillium Web", sans-serif;
-      font-size: 18px;
-      color: #1e90ff; }
+      font-family: "Neucha", sans-serif;
+      font-size: 20px;
+      color: #EAB543; }
     #main-view #about h2 {
-      margin-top: -25px;
+      margin-top: -5px;
       margin-bottom: 25px;
       width: 100%;
       text-align: left;
-      font-family: "Titillium Web", sans-serif;
-      color: #1e90ff; }
+      font-family: "Neucha", sans-serif;
+      color: #EAB543; }
     #main-view #about.show {
       display: block; }
     #main-view #about .close-about {
       opacity: 0;
-      margin-top: -40px;
+      margin-top: 2px;
       margin-left: 476px;
       display: inline-block;
-      color: #1e90ff;
+      color: #EAB543;
       transition: all 200ms ease-in-out; }
       #main-view #about .close-about:hover {
         cursor: pointer;
@@ -126,7 +128,7 @@
   right: 0;
   bottom: 0;
   display: none;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Neucha", sans-serif;
   animation: overlay 400ms ease-in-out forwards; }
   .overlay.show {
     display: flex;
@@ -147,19 +149,20 @@
   padding: 0 0.2em;
   opacity: 1;
   border: 3px solid black;
-  background: #1e90ff;
-  font-family: "Titillium Web", sans-serif;
+  background: black;
+  color: #EAB543;
+  font-family: "Neucha", sans-serif;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   animation: overlay2 500ms ease-in-out forwards; }
   .content .contact {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold; }
   .content .close-btn {
     position: absolute;
     right: 0.5em;
     top: 0.5em;
     font-size: 30px;
-    color: #636e72;
+    color: #EAB543;
     cursor: pointer;
     transition: all 200ms ease-in-out; }
     .content .close-btn:hover {
@@ -191,15 +194,15 @@
     margin-left: 305px;
     width: 90px;
     height: 35px;
-    color: #1e90ff;
-    border: 3px solid #1e90ff;
-    font-family: "Titillium Web", sans-serif;
+    color: #EAB543;
+    border: 3px solid #EAB543;
+    font-family: "Neucha", sans-serif;
     cursor: pointer; }
   .resume .close-btn {
     position: absolute;
     left: 670px;
     font-size: 30px;
-    color: #636e72;
+    color: #EAB543;
     cursor: pointer;
     transition: all 200ms ease-in-out; }
     .resume .close-btn:hover {
