@@ -21,7 +21,7 @@
     margin-right: 270px;
     float: right; }
     #main-view #main-title h1 {
-      color: #EAB543;
+      color: #1e90ff;
       text-transform: uppercase;
       min-width: 400px;
       font-size: 45px;
@@ -32,7 +32,7 @@
     #main-view #main-title h2 {
       font-size: 23px;
       padding: 0 0.2em;
-      background-color: #EAB543;
+      background-color: #1e90ff;
       max-width: 470px; }
   #main-view nav {
     overflow: hidden;
@@ -40,7 +40,7 @@
     margin-left: 300px;
     margin-top: 200px;
     font-size: 28px;
-    color: #EAB543; }
+    color: #1e90ff; }
     #main-view nav span#nav {
       font-size: 20px;
       background-color: black;
@@ -48,16 +48,16 @@
       word-spacing: 5px;
       padding: 0 0.4em;
       border: 1px solid black; }
-      #main-view nav span#nav .resume:hover {
+      #main-view nav span#nav .resume-nav:hover {
         cursor: pointer;
         font-size: 24px; }
-      #main-view nav span#nav .about:hover {
+      #main-view nav span#nav .about-nav:hover {
         cursor: pointer;
         font-size: 24px; }
-      #main-view nav span#nav .projects:hover {
+      #main-view nav span#nav .projects-nav:hover {
         cursor: pointer;
         font-size: 24px; }
-      #main-view nav span#nav .contact:hover {
+      #main-view nav span#nav .contact-nav:hover {
         cursor: pointer;
         font-size: 24px; }
       #main-view nav span#nav .nav-close {
@@ -72,7 +72,7 @@
       display: inline-block;
       animation: nav-animation 500ms ease-in-out forwards; }
     #main-view nav a {
-      color: #EAB543;
+      color: #1e90ff;
       text-decoration: none;
       transition: all 200ms ease-in-out; }
     #main-view nav span#menu-btn {
@@ -95,14 +95,14 @@
     #main-view #about p {
       font-family: "Titillium Web", sans-serif;
       font-size: 18px;
-      color: #EAB543; }
+      color: #1e90ff; }
     #main-view #about h2 {
       margin-top: -25px;
       margin-bottom: 25px;
       width: 100%;
       text-align: left;
       font-family: "Titillium Web", sans-serif;
-      color: #EAB543; }
+      color: #1e90ff; }
     #main-view #about.show {
       display: block; }
     #main-view #about .close-about {
@@ -110,7 +110,7 @@
       margin-top: -40px;
       margin-left: 476px;
       display: inline-block;
-      color: #EAB543;
+      color: #1e90ff;
       transition: all 200ms ease-in-out; }
       #main-view #about .close-about:hover {
         cursor: pointer;
@@ -147,7 +147,7 @@
   padding: 0 0.2em;
   opacity: 1;
   border: 3px solid black;
-  background: #EAB543;
+  background: #1e90ff;
   font-family: "Titillium Web", sans-serif;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   animation: overlay2 500ms ease-in-out forwards; }
@@ -156,18 +156,54 @@
     font-weight: bold; }
   .content .close-btn {
     position: absolute;
-    top: -28px;
-    right: -28px;
+    right: 0.5em;
+    top: 0.5em;
     font-size: 30px;
     color: #636e72;
     cursor: pointer;
     transition: all 200ms ease-in-out; }
+    .content .close-btn:hover {
+      transform: scale(1.2); }
   .content .intro {
     position: fixed; }
   .content.show {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.resume {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  margin-left: -350px;
+  margin-top: -425px; }
+  .resume.show {
+    display: block; }
+  .resume .cv-page1 {
+    display: block; }
+  .resume .cv-page2 {
+    display: none; }
+  .resume .flip-cv {
+    margin-top: 10px;
+    margin-left: 305px;
+    width: 90px;
+    height: 35px;
+    color: #1e90ff;
+    border: 3px solid #1e90ff;
+    font-family: "Titillium Web", sans-serif;
+    cursor: pointer; }
+  .resume .close-btn {
+    position: absolute;
+    left: 670px;
+    font-size: 30px;
+    color: #636e72;
+    cursor: pointer;
+    transition: all 200ms ease-in-out; }
+    .resume .close-btn:hover {
+      transform: scale(1.2); }
 
 /* Animations */
 @keyframes nav-animation {

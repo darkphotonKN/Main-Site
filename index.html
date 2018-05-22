@@ -17,24 +17,27 @@
   <!-- Main Splash Body -->
   <div id="main-view">
 
-    <div id="main-title">
+    <!--Landing Page Title -->
+    <div id="main-title">  
       <h1>
         <span>Kranti Nebhwani</span>
       </h1> 
       <h2>Web Developer, Designer, Software Engineer <ion-icon name="globe"></ion-icon></h2>
     </div>
 
+    <!-- Nav Menu -->
     <nav>
       <span id="menu-btn"> <ion-icon name="list"></ion-icon>Menu</span>
       <span id="nav" class="nav">
-        <a class="resume">Resume</a> |
-        <a class="about">About</a> | 
-        <a class="projects">Projects</a> |
-        <a class="contact">Contact</a>
+        <a class="resume-nav">Resume</a> |
+        <a class="about-nav">About</a> | 
+        <a class="projects-nav">Projects</a> |
+        <a class="contact-nav">Contact</a>
         <ion-icon class="nav-close" name="return-left"></ion-icon>
       </span>
     </nav>
 
+    <!-- About Content -->
     <div id="about">
       <ion-icon class="close-about" name="close"></ion-icon>
       <h2>ABOUT</h2>
@@ -48,10 +51,11 @@
   </div>
 
 
-
+  <!-- Overlay over main page when showing certain content -->
   <div class="overlay">
   </div>
 
+  <!-- Contact Content -->
   <!-- <div class="intro">You can reach me with these contacts between 9am - 9pm GMT. You can however email me anytime but the response may not be immediate but I will try!</div> -->
   <div class="content">
     <ion-icon class="close-btn" name="close-circle"></ion-icon>
@@ -64,6 +68,13 @@
     </div>
   </div>
   
+  <!-- Resume Content -->
+  <div class="resume">
+    <ion-icon class="close-btn" name="close-circle"></ion-icon>
+    <img class="cv-page1 flipped" src="images/cv1.jpg" width="700px" height="850px">
+    <img class="cv-page2" src="images/cv2.jpg" width="700px" height="850px">
+    <button class="flip-cv">Flip!</button>
+  </div>
 
 
   <script type="text/javascript" src="splash-script.js"></script>

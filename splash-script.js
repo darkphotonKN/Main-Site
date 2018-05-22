@@ -4,10 +4,11 @@
 
 // global vars
 
-const navContact = document.querySelector('.nav .contact');
-const navAbout = document.querySelector('.nav .about');
-const navResume = document.querySelector('.nav .resume');
-const navProjects = document.querySelector('.nav .projects');
+// individual nav buttons
+const navContact = document.querySelector('.nav .contact-nav');
+const navAbout = document.querySelector('.nav .about-nav');
+const navResume = document.querySelector('.nav .resume-nav');
+const navProjects = document.querySelector('.nav .projects-nav');
 
 
 // Show Menu
@@ -48,27 +49,79 @@ closeMenu.addEventListener("click", () => navMenu.classList.remove("show"));
 }
 */
 
-// individual nav buttons
-const content = document.querySelector(".content");
-const overlay = document.querySelector(".overlay");
-navResume.addEventListener("click", () => overlay.classList.add("show"));
-
-navProjects.addEventListener("click", () => overlay.classList.add("show"));
-navContact.addEventListener("click", () => overlay.classList.add("show"));
-navContact.addEventListener("click", () => content.classList.add("show"))
 
 /* Overlay */
 
+const overlay = document.querySelector(".overlay");
+
 // remove overlay and content box when clicked on to return to the main landing page
-const overlayBtn = document.querySelector(".close-btn");
-overlayBtn.addEventListener("click", () => {
-    overlay.classList.remove("show")
-    content.classList.remove("show")
+// function for setting up button for removing overlay and pop up content
+
+function closeMenuSetup(overlay, content) {
+    let str = ".x .close-btn";
+    let str2 = str.replace("x", content.className);
+    let str3 = str2.replace("show", "");
+
+    const overlayBtn = document.querySelector(str3);
+
+    overlayBtn.addEventListener("click", () => {
+        overlay.classList.remove("show");
+        content.classList.remove("show");
+    });
+    
+
+}
+
+
+
+/* Resume Section */
+
+const resume = document.querySelector(".resume");
+const resumeButton = document.querySelector(".resume .flip-cv");
+const cvPage1 = document.querySelector(".resume .cv-page1");
+const cvPage2 = document.querySelector(".resume .cv-page2");
+
+navResume.addEventListener("click", () => {
+    overlay.classList.add("show");
+    resume.classList.add("show");
+    closeMenuSetup(overlay, resume);
+});
+
+resumeButton.addEventListener("click", () => {
+    let cv1DisplayState = window.getComputedStyle(cvPage1, null).getPropertyValue("display");
+    // check if first or second page is showing and display the other
+    if(cv1DisplayState == "block") {
+        cvPage1.style.display = "none";
+        cvPage2.style.display = "block";
+    }
+    else {
+        cvPage1.style.display = "block";
+        cvPage2.style.display = "none";
+    }
 });
 
 
 
-// About
+
+/* Contacts Section */
+
+const content = document.querySelector(".content");
+
+navContact.addEventListener("click", () => {
+    overlay.classList.add("show"); 
+    content.classList.add("show");
+    closeMenuSetup(overlay, content);
+});
+
+
+/* Projects */
+
+navProjects.addEventListener("click", () => overlay.classList.add("show"));
+
+
+
+/* About Section */
+
 const aboutSection = document.getElementById("about"); 
 const closeAbout = document.querySelector("#about .close-about");
 
@@ -83,7 +136,7 @@ aboutSection.addEventListener("mouseleave", () => closeAbout.classList.remove("s
 closeAbout.addEventListener("click", () => aboutSection.classList.remove("show"));
 
 
-// Projects 
+
 
 
 /* test */

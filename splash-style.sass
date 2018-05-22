@@ -1,5 +1,5 @@
 
-$main-theme: #EAB543
+$main-theme: #1e90ff//#f8d902 
 $main-title-offsetX: 270px
 $main-title-offsetY: 580px
 $main-font: 'Titillium Web', sans-serif
@@ -68,16 +68,16 @@ $main-font: 'Titillium Web', sans-serif
       padding: 0 0.4em
       border: 1px solid black
       // individual nav button hover animations
-      .resume:hover
+      .resume-nav:hover
         cursor: pointer
         font-size: 24px
-      .about:hover
+      .about-nav:hover
         cursor: pointer
         font-size: 24px
-      .projects:hover
+      .projects-nav:hover
         cursor: pointer
         font-size: 24px
-      .contact:hover
+      .contact-nav:hover
         cursor: pointer
         font-size: 24px
       // close button
@@ -152,7 +152,7 @@ $main-font: 'Titillium Web', sans-serif
         opacity: 1
 
 
-// Contact Content
+  // Contact Content
 
 $content-width: 500px
 $content-height: 400px
@@ -179,7 +179,6 @@ $content-height: 400px
 .content
   position: absolute
   display: none
-
   // centers content box on page
   top: 50%
   left: 50%
@@ -203,12 +202,15 @@ $content-height: 400px
   
   .close-btn
     position: absolute
-    top: -28px
-    right: -28px
+    right: 0.5em
+    top: 0.5em
     font-size: 30px
     color: #636e72
     cursor: pointer
     transition: all 200ms ease-in-out
+
+    &:hover
+      transform: scale(1.2)
 
   .intro
     position: fixed
@@ -220,7 +222,56 @@ $content-height: 400px
 
 
 
+// Resume Content
+$cv-height: 850px
+$cv-width: 700px
 
+$cv-btn-width: 90px
+$cv-btn-height: 35px
+
+.resume
+  position: absolute
+  display: none 
+  top: 50%
+  left: 50%
+  right: 0
+  bottom: 0 
+  margin-left: -$cv-width*0.5
+  margin-top: -$cv-height*0.5
+
+  &.show
+    display: block
+
+  .cv-page1
+    display: block
+
+  .cv-page2
+    display: none
+
+  
+  .flip-cv
+    margin-top: 10px
+    // center button on resume display
+    margin-left: ($cv-width*0.5) - ($cv-btn-width*0.5)
+    width: $cv-btn-width
+    height: $cv-btn-height
+    color: $main-theme
+    border: 3px solid $main-theme
+    font-family: $main-font
+
+    cursor: pointer
+  
+  $resCloseBtnSize: 30px
+  .close-btn
+    position: absolute
+    left: $cv-width - $resCloseBtnSize // keep it to the exact right of resume page
+    font-size: $resCloseBtnSize
+    color: #636e72
+    cursor: pointer
+    transition: all 200ms ease-in-out
+
+    &:hover
+      transform: scale(1.2)
 
 
 /* Animations */
