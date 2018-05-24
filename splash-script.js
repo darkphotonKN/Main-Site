@@ -114,11 +114,6 @@ navContact.addEventListener("click", () => {
 });
 
 
-/* Projects */
-
-navProjects.addEventListener("click", () => overlay.classList.add("show"));
-
-
 
 /* About Section */
 
@@ -136,7 +131,20 @@ aboutSection.addEventListener("mouseleave", () => closeAbout.classList.remove("s
 closeAbout.addEventListener("click", () => aboutSection.classList.remove("show"));
 
 
+/* Projects Section */
 
+const projectsSection = document.getElementById("projects"); 
+const closeProjects = document.querySelector("#projects .close-projects");
+
+// show about section when about is clicked in nav menu
+navProjects.addEventListener("click", () => projectsSection.classList.add("show"));
+
+// show and hide close button when mouse enters about section area
+projectsSection.addEventListener("mouseenter", () => closeProjects.classList.add("show"));
+projectsSection.addEventListener("mouseleave", () => closeProjects.classList.remove("show"));
+
+// close button closes about section
+closeProjects.addEventListener("click", () => projectsSection.classList.remove("show"));
 
 
 /* test */
