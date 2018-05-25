@@ -59,7 +59,7 @@ const overlay = document.querySelector(".overlay");
 
 function closeMenuSetup(overlay, content) {
     let str = ".x .close-btn";
-    let str2 = str.replace("x", content.className);
+let str2 = str.replace("x", content.className);
     let str3 = str2.replace("show", "");
 
     const overlayBtn = document.querySelector(str3);
@@ -99,6 +99,7 @@ resumeButton.addEventListener("click", () => {
         cvPage2.style.display = "none";
     }
 });
+
 
 
 
@@ -145,6 +146,33 @@ projectsSection.addEventListener("mouseleave", () => closeProjects.classList.rem
 
 // close button closes about section
 closeProjects.addEventListener("click", () => projectsSection.classList.remove("show"));
+
+
+/* Using Masonry to grid projects */
+
+let project = document.querySelector('#main-view #projects');
+
+//gridItem[i].style.display = "block"
+let msnry = new Masonry(project, {
+  // options
+  itemSelector: '.item', // query selector of the individual items within the grid
+  columnWidth: 370, // adjust width of each column which tries to fit in the masonry grid'
+  containerStyle: null,
+  
+});                // default is 200
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* test */
