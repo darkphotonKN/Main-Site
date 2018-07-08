@@ -7,6 +7,7 @@
 // individual nav buttons
 const navContact = document.querySelector('.nav .contact-nav');
 const navAbout = document.querySelector('.nav .about-nav');
+const navSite = document.querySelector('.nav .site-nav');
 const navResume = document.querySelector('.nav .resume-nav');
 const navProjects = document.querySelector('.nav .projects-nav');
 
@@ -59,7 +60,7 @@ const overlay = document.querySelector(".overlay");
 
 function closeMenuSetup(overlay, content) {
     let str = ".x .close-btn";
-let str2 = str.replace("x", content.className);
+    let str2 = str.replace("x", content.className);
     let str3 = str2.replace("show", "");
 
     const overlayBtn = document.querySelector(str3);
@@ -71,7 +72,7 @@ let str2 = str.replace("x", content.className);
     
 
 }
-
+    
 
 
 /* Resume Section */
@@ -99,7 +100,6 @@ resumeButton.addEventListener("click", () => {
         cvPage2.style.display = "none";
     }
 });
-
 
 
 
@@ -132,34 +132,48 @@ aboutSection.addEventListener("mouseleave", () => closeAbout.classList.remove("s
 closeAbout.addEventListener("click", () => aboutSection.classList.remove("show"));
 
 
-/* Projects Section */
+/* The Site Section */
 
-const projectsSection = document.getElementById("projects"); 
-const closeProjects = document.querySelector("#projects .close-projects");
+const siteSection = document.getElementById("site"); 
+const closeSite = document.querySelector("#site .close-site");
 
 // show about section when about is clicked in nav menu
-navProjects.addEventListener("click", () => projectsSection.classList.add("show"));
+navSite.addEventListener("click", () => siteSection.classList.add("show"));
 
 // show and hide close button when mouse enters about section area
-projectsSection.addEventListener("mouseenter", () => closeProjects.classList.add("show"));
-projectsSection.addEventListener("mouseleave", () => closeProjects.classList.remove("show"));
+siteSection.addEventListener("mouseenter", () => closeSite.classList.add("show"));
+siteSection.addEventListener("mouseleave", () => closeSite.classList.remove("show"));
 
 // close button closes about section
-closeProjects.addEventListener("click", () => projectsSection.classList.remove("show"));
+closeSite.addEventListener("click", () => siteSection.classList.remove("show"));
 
 
-/* Using Masonry to grid projects */
+/* Projects Section */
+const projectsSection = document.querySelector(".projects"); 
 
-let project = document.querySelector('#main-view #projects');
+function projectSectionSetup() {
 
-//gridItem[i].style.display = "block"
-let msnry = new Masonry(project, {
-  // options
-  itemSelector: '.item', // query selector of the individual items within the grid
-  columnWidth: 370, // adjust width of each column which tries to fit in the masonry grid'
-  containerStyle: null,
-  
-});                // default is 200
+    // show about section when about is clicked in nav menu
+    navProjects.addEventListener("click", () => {
+        overlay.classList.add("show");
+        projectsSection.classList.add("show");
+        closeMenuSetup(overlay, projectsSection);
+        
+        // once project set up done, set up masonry
+        let msnry = new Masonry(projectsSection, {
+            // options
+            itemSelector: '.item', // query selector of the individual items within the grid
+            columnWidth: '.grid-sizer', // adjust width of each column which tries to fit in the masonry grid'
+            percentPosition: true,
+            containerStyle: null
+                
+        });  // default is 200
+    });
+    
+}
+
+
+projectSectionSetup();
 
 
 

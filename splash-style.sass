@@ -26,7 +26,7 @@ $formal-font: 'Titillium Web', sans-serif
     size: cover
 
 
-  /* TITLE OF PAGE */
+  /* TITLE OF PAGE */kl
 
 
   #main-title
@@ -77,12 +77,12 @@ $formal-font: 'Titillium Web', sans-serif
         transition: all 200ms ease-in-out
 
       // individual nav button 
-      .resume-nav, .about-nav, .projects-nav, .contact-nav
+      .resume-nav, .about-nav, .site-nav, .projects-nav, .contact-nav
         text-transform: uppercase
         color: #f1f2f6  
 
       //hover animations
-      .resume-nav:hover, .about-nav:hover, .projects-nav:hover, .contact-nav:hover
+      .resume-nav:hover, .about-nav:hover, .site-nav:hover, .projects-nav:hover, .contact-nav:hover
         cursor: pointer
         font-size: 26px
         color: $main-theme
@@ -122,13 +122,13 @@ $formal-font: 'Titillium Web', sans-serif
     display: none
     margin-left: 15%
     margin-top: 8%
-    max-width: 500px
-    min-width: 500px
+    max-width: 505px
+    min-width: 505px
     height: 420px
     padding: 0 0.4em
     background-color: black
     opacity: 0.9
-    animation: about 300ms ease-in-out forwards
+    animation: about 500ms ease-in-out forwards
 
     .top-banner
       display: flex
@@ -153,7 +153,7 @@ $formal-font: 'Titillium Web', sans-serif
 
     h2
       font-size: 25px
-      color: $main-theme
+      color: $main-theme 
 
     &.show
       display: block
@@ -175,77 +175,64 @@ $formal-font: 'Titillium Web', sans-serif
       &.show
         opacity: 1
 
-  
-  /* Projects Section */ 
 
-  #projects
-    height: 500px
-    width: 745px
-    background: black
-    position: absolute
-    top: 0
-    right: 0
-    margin-top: 5%
-    margin-right: 8%
-    padding-top: 55px
-    padding-left: 5px
-    opacity: 0
+  /* The Site Content */
+
+  #site
     font-family: $formal-font
-    
+    display: none
+    position: absolute 
+    top: 180px
+    right: 140px
+    height: 200px
+    min-width: 805px
+    max-width: 805px
+    padding-left: 5px
+    background-color: black
+    opacity: 0.9
+    animation: site 600ms ease-in-out forwards
 
-    &.show
-      opacity: 1
-      animation: projects 300ms ease-in-out forwards
-
-    .item
-      height: 200px 
-      width: 280px
-      margin-bottom: 5px 
-      //margin-left: 20px
-      animation: project-items 600ms ease-in-out forwards 
-      background:
-        size: cover
-        position: center
-      
-      &:nth-child(3)
-        background-image: url('images/proj1.jpg')
-        width: 360px
-      &:nth-child(4)
-        background-image: url('images/proj4.jpg')
-        width: 360px
-      &:nth-child(5)
-        background-image: url('images/proj3.jpg')
-        width: 360px        
-      &:nth-child(6)
-        width: 360px
-        background-image: url('images/proj2.jpg')
-
-    
     .top-banner
-      position: absolute
-      margin-left: -5px
-      border: 2px solid black
-      top: 0
-      z-index: 2
-      width: 100%  
-      height: 50px
-      background: 
-        image: url('images/7-banner.jpg')
       display: flex
       align-items: center
       justify-content: center
-    
-      h2 
-        font-size: 25px
-        color: $main-theme
-
-    .close-projects
       position: absolute
-      z-index: 3
-      font-size: 22px
+      border: 2px solid black
       top: 0
       right: 0
+      height: 50px
+      width: 100%
+      background: 
+        image: url('images/7-banner.jpg')
+        size: cover
+
+    p
+      position: absolute
+      top: 72px
+      font-family: $formal-font
+      font-size: 17px
+      color: $main-theme
+
+      span 
+        margin-left: 45%
+        a 
+          color: #6480B2
+          &:hover
+            color: #fff 
+
+    h2
+      font-size: 25px
+      color: $main-theme
+
+    &.show
       display: block
+    
+    .close-site
+      position: absolute
+      z-index: 2
+      font-size: 22px
+      right: 0
+      display: inline-block
       color: $main-theme
       opacity: 0
       transition: all 200ms ease-in-out
@@ -253,8 +240,11 @@ $formal-font: 'Titillium Web', sans-serif
       &:hover
         cursor: pointer
         transform: scale(1.3)
+
       &.show
         opacity: 1
+  
+
 
 // Overlay Background (used for some pages)
 
@@ -274,6 +264,82 @@ $formal-font: 'Titillium Web', sans-serif
     display: flex
     align-items: center
     justify-content: center
+
+/* Projects Section */ 
+$proj-height: 600px
+$proj-width: 1200px
+
+.projects
+  height: $proj-height
+  width: $proj-width
+  background-color: black
+  position: absolute
+  display: none 
+  top: 50%
+  left: 50%
+  right: 0
+  bottom: 0 
+  padding-top: 50px
+  margin-left: -$proj-width*0.5
+  margin-top: -$proj-height*0.5
+  font-family: $formal-font
+  
+
+  &.show
+    display: block
+    animation: projects 500ms ease-in-out forwards
+
+  .item
+    height: 250px 
+    animation: project-items 1200ms ease-in-out forwards
+    cursor: pointer 
+    background:
+      size: cover
+      position: center
+
+    // masonry 
+    &:nth-child(3)
+      background-image: url('images/proj1.jpg')
+    &:nth-child(4)
+      background-image: url('images/proj4.jpg')
+    &:nth-child(5)
+      background-image: url('images/proj3.jpg')       
+    &:nth-child(6)
+      background-image: url('images/proj2.jpg')
+
+
+  .item, .grid-sizer
+    width: 50%
+  
+  .top-banner
+    position: absolute
+    border: 2px solid black
+    top: 0
+    z-index: 2
+    width: 100%  
+    height: 50px
+    background: 
+      image: url('images/7-banner.jpg')
+    display: flex
+    align-items: center
+    justify-content: center
+  
+    h2 
+      font-size: 25px
+      color: $main-theme
+
+  .close-btn
+    position: absolute
+    z-index: 3
+    right: 0.5em
+    top: 0.5em
+    font-size: 22px
+    color: $main-theme
+    cursor: pointer
+    transition: all 200ms ease-in-out
+
+    &:hover
+      transform: scale(1.3)
 
 
 // Contact Content
@@ -414,6 +480,23 @@ $cv-btn-height: 35px
       transform: scale(1.2)
 
 
+/* Testing second splash page for projects */
+.splash-2 
+  height: 100vh
+  width: 100%
+  text-align: left 
+  font-family: $formal-font
+  
+  h2 
+    margin-top: 50px
+    margin-left: 15%
+
+  p 
+    width: 70%
+    margin: 50px auto 0
+
+
+
 
 /* Animations */
 
@@ -448,19 +531,35 @@ $cv-btn-height: 35px
   100%  
     transform: translateX(0px)
 
+// site section animation 
+@keyframes site
+  0%
+    transform: translateY(-400px)
+  100%  
+    transform: translateY(0px)
+
 // projects section animation
 @keyframes projects
   0%
-    transform: translateX(1000px)
+    transform: translateY(1000px)
+    opacity: 0.2
   100%
-    transform: translateX(0px)
+    opacity: 1
+    transform: translateY(0px)
 
 @keyframes project-items
   0%
     opacity: 0
+  10%
+    transform: translateY(20px)
+  30%
+    transform: translateY(-20px)
   50%
-    opacity: 0
+    transform: translateY(10px)
+  75%
+    transform: translateY(-10px)
   100%
+    transform: translateY(0)
     opacity: 1
 
 // resume section flipping resume
@@ -469,7 +568,6 @@ $cv-btn-height: 35px
     transform: rotateX(180deg)
   100% 
     transform: rotateX(0deg)
-
 
 
 /* Responsive Design */
