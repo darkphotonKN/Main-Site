@@ -3,7 +3,7 @@ $main-theme: #EAB543
 $main-title-offsetX: 270px
 $main-title-offsetY: 580px
 $main-font: 'Neucha', sans-serif
-$formal-font: 'Titillium Web', sans-serif
+$formal-font: 'Raleway', sans-serif
 
 *
   margin: 0px
@@ -16,7 +16,7 @@ $formal-font: 'Titillium Web', sans-serif
 #main-view
   font-family: $main-font
   width: 100%
-  min-width: 1200px
+  min-width: 200px
   height: 100vh
   overflow: hidden
   // center splash background
@@ -26,7 +26,7 @@ $formal-font: 'Titillium Web', sans-serif
     size: cover
 
 
-  /* TITLE OF PAGE */kl
+  /* TITLE OF PAGE */
 
 
   #main-title
@@ -58,8 +58,9 @@ $formal-font: 'Titillium Web', sans-serif
     // so that nav position does not push down other elements
     overflow: hidden
     min-width: 450px
-    margin-left: 300px
-    margin-top: 200px
+    position: absolute
+    top: 18%
+    left: 18%
     font-size: 28px
     color: $main-theme
 
@@ -78,7 +79,7 @@ $formal-font: 'Titillium Web', sans-serif
 
       // individual nav button 
       .resume-nav, .about-nav, .site-nav, .projects-nav, .contact-nav
-        text-transform: uppercase
+        text-transform: none
         color: #f1f2f6  
 
       //hover animations
@@ -95,8 +96,9 @@ $formal-font: 'Titillium Web', sans-serif
         &:hover
           cursor: pointer
           transform: translate(-3px, 3px)
-      .nav-close.show
-        display: inline-block
+
+        &.show
+          display: inline-block
     
 
 
@@ -124,7 +126,7 @@ $formal-font: 'Titillium Web', sans-serif
     margin-top: 8%
     max-width: 505px
     min-width: 505px
-    height: 420px
+    height: 360px
     padding: 0 0.4em
     background-color: black
     opacity: 0.9
@@ -182,9 +184,9 @@ $formal-font: 'Titillium Web', sans-serif
     font-family: $formal-font
     display: none
     position: absolute 
-    top: 180px
+    top: 240px
     right: 140px
-    height: 200px
+    height: 180px
     min-width: 805px
     max-width: 805px
     padding-left: 5px
@@ -212,13 +214,15 @@ $formal-font: 'Titillium Web', sans-serif
       font-family: $formal-font
       font-size: 17px
       color: $main-theme
+      padding-left: 10px
 
       span 
-        margin-left: 45%
+        margin-left: 40%
         a 
-          color: #6480B2
+          text-decoration: none
+          color: #fff 
           &:hover
-            color: #fff 
+            color: #6480B2
 
     h2
       font-size: 25px
@@ -250,6 +254,7 @@ $formal-font: 'Titillium Web', sans-serif
 
 .overlay
   // so that it stays at the first landing page and overlays it
+  z-index: 2
   position: absolute
   background: black
   top: 0
@@ -270,6 +275,7 @@ $proj-height: 600px
 $proj-width: 1200px
 
 .projects
+  z-index: 2
   height: $proj-height
   width: $proj-width
   background-color: black
@@ -298,13 +304,13 @@ $proj-width: 1200px
       position: center
 
     // masonry 
-    &:nth-child(3)
-      background-image: url('images/proj1.jpg')
     &:nth-child(4)
-      background-image: url('images/proj4.jpg')
+      background-image: url('images/proj1.jpg')
     &:nth-child(5)
-      background-image: url('images/proj3.jpg')       
+      background-image: url('images/proj4.jpg')
     &:nth-child(6)
+      background-image: url('images/proj3.jpg')       
+    &:nth-child(7)
       background-image: url('images/proj2.jpg')
 
 
@@ -348,6 +354,7 @@ $content-width: 500px
 $content-height: 400px
 
 .content
+  z-index: 2
   position: absolute
   display: none
   // centers content box on page
@@ -427,6 +434,7 @@ $cv-btn-width: 90px
 $cv-btn-height: 35px
 
 .resume
+  z-index: 2
   position: absolute
   display: none 
   top: 50%
@@ -480,8 +488,29 @@ $cv-btn-height: 35px
       transform: scale(1.2)
 
 
+// weather display 
+.weather-display
+  z-index: 1
+  display: flex
+  flex-direction: row 
+  justify-content: center 
+  align-items: center
+  position: absolute
+  top: 18%
+  right: 18%
+  color: #fff
+  font-size: 25px
+  font-family: $main-font
+
+  .weather-icon
+    z-index: 1
+    margin-left: 5px
+    transform: scale(1.2)
+
+
 /* Testing second splash page for projects */
 .splash-2 
+
   height: 100vh
   width: 100%
   text-align: left 
@@ -574,17 +603,39 @@ $cv-btn-height: 35px
 
 @media (max-width: 1000px)
 
-  #main-title h1
-    span
-      margin-left: 350px
-      font-size: 20px
+  #main-view 
+    #main-title h1
+      span
+        margin-left: 100px
+        font-size: 18px
 
+    nav 
+      position: absolute 
+      top: 0
+      left: 0
+      margin-top: 10%
+      margin-left: 10%
 
-@media (max-width: 1000px)
+      span#nav 
+        font-size: 10px
 
-  #main-title h2
-    margin-left: 350px
-    font-size: 12px
+      span#menu-btn
+        font-size: 12px
+        &:hover 
+          font-size: 13px
+
+/* Responsive Design */
+
+@media (max-width: 768px)
+  body #main-view
+    width: 768px
+    height: 1024px
+
+@media (max-width: 414px) 
+  body  #main-view
+    width: 414px
+    height: 736px
+
 
 
 

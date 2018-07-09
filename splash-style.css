@@ -7,13 +7,13 @@
 #main-view {
   font-family: "Neucha", sans-serif;
   width: 100%;
-  min-width: 1200px;
+  min-width: 200px;
   height: 100vh;
   overflow: hidden;
   position: center;
   background-image: url("images/7.jpg");
   background-size: cover;
-  /* TITLE OF PAGE */kl */
+  /* TITLE OF PAGE */
   /* NAVIGATION */
   /* About Content */
   /* The Site Content */ }
@@ -25,7 +25,7 @@
       color: black;
       min-width: 400px;
       font-size: 45px;
-      font-family: "Titillium Web", sans-serif;
+      font-family: "Raleway", sans-serif;
       transition: ease-in 400ms; }
       #main-view #main-title h1 span {
         padding: 0 0.2em;
@@ -38,8 +38,9 @@
   #main-view nav {
     overflow: hidden;
     min-width: 450px;
-    margin-left: 300px;
-    margin-top: 200px;
+    position: absolute;
+    top: 18%;
+    left: 18%;
     font-size: 28px;
     color: #EAB543; }
     #main-view nav span#nav {
@@ -53,7 +54,7 @@
         text-decoration: none;
         transition: all 200ms ease-in-out; }
       #main-view nav span#nav .resume-nav, #main-view nav span#nav .about-nav, #main-view nav span#nav .site-nav, #main-view nav span#nav .projects-nav, #main-view nav span#nav .contact-nav {
-        text-transform: uppercase;
+        text-transform: none;
         color: #f1f2f6; }
       #main-view nav span#nav .resume-nav:hover, #main-view nav span#nav .about-nav:hover, #main-view nav span#nav .site-nav:hover, #main-view nav span#nav .projects-nav:hover, #main-view nav span#nav .contact-nav:hover {
         cursor: pointer;
@@ -66,8 +67,8 @@
         #main-view nav span#nav .nav-close:hover {
           cursor: pointer;
           transform: translate(-3px, 3px); }
-      #main-view nav span#nav .nav-close.show {
-        display: inline-block; }
+        #main-view nav span#nav .nav-close.show {
+          display: inline-block; }
     #main-view nav span#nav.show {
       display: inline-block;
       animation: nav-animation 500ms ease-in-out forwards; }
@@ -79,13 +80,13 @@
         font-size: 34px;
         color: #f1f2f6; }
   #main-view #about {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Raleway", sans-serif;
     display: none;
     margin-left: 15%;
     margin-top: 8%;
     max-width: 505px;
     min-width: 505px;
-    height: 420px;
+    height: 360px;
     padding: 0 0.4em;
     background-color: black;
     opacity: 0.9;
@@ -105,7 +106,7 @@
     #main-view #about p {
       position: absolute;
       top: 72px;
-      font-family: "Titillium Web", sans-serif;
+      font-family: "Raleway", sans-serif;
       font-size: 17px;
       color: #EAB543; }
     #main-view #about h2 {
@@ -128,12 +129,12 @@
       #main-view #about .close-about.show {
         opacity: 1; }
   #main-view #site {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Raleway", sans-serif;
     display: none;
     position: absolute;
-    top: 180px;
+    top: 240px;
     right: 140px;
-    height: 200px;
+    height: 180px;
     min-width: 805px;
     max-width: 805px;
     padding-left: 5px;
@@ -155,15 +156,17 @@
     #main-view #site p {
       position: absolute;
       top: 72px;
-      font-family: "Titillium Web", sans-serif;
+      font-family: "Raleway", sans-serif;
       font-size: 17px;
-      color: #EAB543; }
+      color: #EAB543;
+      padding-left: 10px; }
       #main-view #site p span {
-        margin-left: 45%; }
+        margin-left: 40%; }
         #main-view #site p span a {
-          color: #6480B2; }
+          text-decoration: none;
+          color: #fff; }
           #main-view #site p span a:hover {
-            color: #fff; }
+            color: #6480B2; }
     #main-view #site h2 {
       font-size: 25px;
       color: #EAB543; }
@@ -185,6 +188,7 @@
         opacity: 1; }
 
 .overlay {
+  z-index: 2;
   position: absolute;
   background: black;
   top: 0;
@@ -201,6 +205,7 @@
 
 /* Projects Section */
 .projects {
+  z-index: 2;
   height: 600px;
   width: 1200px;
   background-color: black;
@@ -213,7 +218,7 @@
   padding-top: 50px;
   margin-left: -600px;
   margin-top: -300px;
-  font-family: "Titillium Web", sans-serif; }
+  font-family: "Raleway", sans-serif; }
   .projects.show {
     display: block;
     animation: projects 500ms ease-in-out forwards; }
@@ -223,13 +228,13 @@
     cursor: pointer;
     background-size: cover;
     background-position: center; }
-    .projects .item:nth-child(3) {
-      background-image: url("images/proj1.jpg"); }
     .projects .item:nth-child(4) {
-      background-image: url("images/proj4.jpg"); }
+      background-image: url("images/proj1.jpg"); }
     .projects .item:nth-child(5) {
-      background-image: url("images/proj3.jpg"); }
+      background-image: url("images/proj4.jpg"); }
     .projects .item:nth-child(6) {
+      background-image: url("images/proj3.jpg"); }
+    .projects .item:nth-child(7) {
       background-image: url("images/proj2.jpg"); }
   .projects .item, .projects .grid-sizer {
     width: 50%; }
@@ -260,6 +265,7 @@
       transform: scale(1.3); }
 
 .content {
+  z-index: 2;
   position: absolute;
   display: none;
   top: 50%;
@@ -275,7 +281,7 @@
   border: 3px solid black;
   background: black;
   color: #EAB543;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Raleway", sans-serif;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   animation: overlay2 500ms ease-in-out forwards; }
   .content .close-btn {
@@ -292,9 +298,9 @@
   .content .contact {
     font-size: 20px;
     font-weight: bold;
-    font-family: "Titillium Web", sans-serif; }
+    font-family: "Raleway", sans-serif; }
     .content .contact h2 {
-      font-family: "Titillium Web", sans-serif;
+      font-family: "Raleway", sans-serif;
       font-size: 25px; }
     .content .contact span {
       opacity: 0.6; }
@@ -318,6 +324,7 @@
     justify-content: center; }
 
 .resume {
+  z-index: 2;
   position: absolute;
   display: none;
   top: 50%;
@@ -355,16 +362,33 @@
     color: #636e72;
     cursor: pointer;
     transition: all 200ms ease-in-out;
-    font-family: "Titillium Web", sans-serif; }
+    font-family: "Raleway", sans-serif; }
     .resume .close-btn:hover {
       transform: scale(1.2); }
+
+.weather-display {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 18%;
+  right: 18%;
+  color: #fff;
+  font-size: 25px;
+  font-family: "Neucha", sans-serif; }
+  .weather-display .weather-icon {
+    z-index: 1;
+    margin-left: 5px;
+    transform: scale(1.2); }
 
 /* Testing second splash page for projects */
 .splash-2 {
   height: 100vh;
   width: 100%;
   text-align: left;
-  font-family: "Titillium Web", sans-serif; }
+  font-family: "Raleway", sans-serif; }
   .splash-2 h2 {
     margin-top: 50px;
     margin-left: 15%; }
@@ -428,13 +452,30 @@
     transform: rotateX(0deg); } }
 /* Responsive Design */
 @media (max-width: 1000px) {
-  #main-title h1 span {
-    margin-left: 350px;
-    font-size: 20px; } }
-@media (max-width: 1000px) {
-  #main-title h2 {
-    margin-left: 350px;
-    font-size: 12px; } }
+  #main-view #main-title h1 span {
+    margin-left: 100px;
+    font-size: 18px; }
+  #main-view nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10%;
+    margin-left: 10%; }
+    #main-view nav span#nav {
+      font-size: 10px; }
+    #main-view nav span#menu-btn {
+      font-size: 12px; }
+      #main-view nav span#menu-btn:hover {
+        font-size: 13px; } }
+/* Responsive Design */
+@media (max-width: 768px) {
+  body #main-view {
+    width: 768px;
+    height: 1024px; } }
+@media (max-width: 414px) {
+  body #main-view {
+    width: 414px;
+    height: 736px; } }
 /* Testing */
 
 /*# sourceMappingURL=splash-style.css.map */

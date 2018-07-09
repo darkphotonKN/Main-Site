@@ -59,11 +59,10 @@ const overlay = document.querySelector(".overlay");
 // function for setting up button for removing overlay and pop up content
 
 function closeMenuSetup(overlay, content) {
-    let str = ".x .close-btn";
-    let str2 = str.replace("x", content.className);
-    let str3 = str2.replace("show", "");
+    let str = `.${content.className} .close-btn`;
+    let str2 = str.replace("show", "");
 
-    const overlayBtn = document.querySelector(str3);
+    const overlayBtn = document.querySelector(str2);
 
     overlayBtn.addEventListener("click", () => {
         overlay.classList.remove("show");
@@ -72,7 +71,6 @@ function closeMenuSetup(overlay, content) {
     
 
 }
-    
 
 
 /* Resume Section */
@@ -100,8 +98,6 @@ resumeButton.addEventListener("click", () => {
         cvPage2.style.display = "none";
     }
 });
-
-
 
 
 /* Contacts Section */
@@ -172,11 +168,23 @@ function projectSectionSetup() {
     
 }
 
-
 projectSectionSetup();
 
 
 
+/* Weather Display using api from openweathermap */
+
+let cityName = 'London';
+const weatherDisplay = document.querySelector('.weather-display');
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=b6f81bc6ba91f4e3da7929d440bec6c2&units=metric`)
+    .then(res => res.json()) // return as a promise in json format
+    .then(res => {
+        // create icon 
+        console.log(res.weather[0]);
+        let weatherIcon = `<img class="weather-icon" src="http://openweathermap.org/img/w/${res.weather[0].icon}.png">`;
+        // output
+        weatherDisplay.innerHTML = `${res.main.temp} &degC${weatherIcon}`;
+    });
 
 
 
