@@ -174,7 +174,7 @@ projectSectionSetup();
 
 /* Weather Display using api from openweathermap */
 
-let cityName = 'London';
+let cityName = 'Taipei';
 const weatherDisplay = document.querySelector('.weather-display');
 fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=b6f81bc6ba91f4e3da7929d440bec6c2&units=metric`)
     .then(res => res.json()) // return as a promise in json format
@@ -183,7 +183,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=b6f81b
         console.log(res.weather[0]);
         let weatherIcon = `<img class="weather-icon" src="http://openweathermap.org/img/w/${res.weather[0].icon}.png">`;
         // output
-        weatherDisplay.innerHTML = `${res.main.temp} &degC${weatherIcon}`;
+        weatherDisplay.innerHTML = `${res.main.temp.toFixed(1)} &degC${weatherIcon}`;
     });
 
 

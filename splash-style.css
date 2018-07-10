@@ -5,7 +5,7 @@
 
 /* MAIN SCREEN / WELCOME PAGE */
 #main-view {
-  font-family: "Neucha", sans-serif;
+  font-family: "Raleway", sans-serif;
   width: 100%;
   min-width: 200px;
   height: 100vh;
@@ -18,19 +18,21 @@
   /* About Content */
   /* The Site Content */ }
   #main-view #main-title {
-    margin-top: 580px;
-    margin-right: 270px;
+    position: absolute;
+    top: 65%;
+    left: 60%;
     float: right; }
     #main-view #main-title h1 {
       color: black;
       min-width: 400px;
       font-size: 45px;
-      font-family: "Raleway", sans-serif;
+      font-family: "Fira Sans", sans-serif;
       transition: ease-in 400ms; }
       #main-view #main-title h1 span {
         padding: 0 0.2em;
         background-color: none; }
     #main-view #main-title h2 {
+      font-family: "Neucha", sans-serif;
       font-size: 23px;
       padding: 0 0.2em;
       background-color: #EAB543;
@@ -41,6 +43,7 @@
     position: absolute;
     top: 18%;
     left: 18%;
+    font-family: "Neucha", sans-serif;
     font-size: 28px;
     color: #EAB543; }
     #main-view nav span#nav {
@@ -80,10 +83,10 @@
         font-size: 34px;
         color: #f1f2f6; }
   #main-view #about {
-    font-family: "Raleway", sans-serif;
+    font-family: "Fira Sans", sans-serif;
     display: none;
     margin-left: 15%;
-    margin-top: 8%;
+    margin-top: 20%;
     max-width: 505px;
     min-width: 505px;
     height: 360px;
@@ -106,7 +109,7 @@
     #main-view #about p {
       position: absolute;
       top: 72px;
-      font-family: "Raleway", sans-serif;
+      font-family: "Fira Sans", sans-serif;
       font-size: 17px;
       color: #EAB543; }
     #main-view #about h2 {
@@ -129,10 +132,10 @@
       #main-view #about .close-about.show {
         opacity: 1; }
   #main-view #site {
-    font-family: "Raleway", sans-serif;
+    font-family: "Fira Sans", sans-serif;
     display: none;
     position: absolute;
-    top: 240px;
+    top: 25%;
     right: 140px;
     height: 180px;
     min-width: 805px;
@@ -156,7 +159,7 @@
     #main-view #site p {
       position: absolute;
       top: 72px;
-      font-family: "Raleway", sans-serif;
+      font-family: "Fira Sans", sans-serif;
       font-size: 17px;
       color: #EAB543;
       padding-left: 10px; }
@@ -196,7 +199,7 @@
   right: 0;
   bottom: 0;
   display: none;
-  font-family: "Neucha", sans-serif;
+  font-family: "Raleway", sans-serif;
   animation: overlay 400ms ease-in-out forwards; }
   .overlay.show {
     display: flex;
@@ -218,7 +221,7 @@
   padding-top: 50px;
   margin-left: -600px;
   margin-top: -300px;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Fira Sans", sans-serif; }
   .projects.show {
     display: block;
     animation: projects 500ms ease-in-out forwards; }
@@ -229,13 +232,13 @@
     background-size: cover;
     background-position: center; }
     .projects .item:nth-child(4) {
-      background-image: url("images/proj1.jpg"); }
+      background-image: url("images/proj1.png"); }
     .projects .item:nth-child(5) {
-      background-image: url("images/proj4.jpg"); }
+      background-image: url("images/proj2.png"); }
     .projects .item:nth-child(6) {
-      background-image: url("images/proj3.jpg"); }
+      background-image: url("images/proj4.png"); }
     .projects .item:nth-child(7) {
-      background-image: url("images/proj2.jpg"); }
+      background-image: url("images/proj3.png"); }
   .projects .item, .projects .grid-sizer {
     width: 50%; }
   .projects .top-banner {
@@ -281,7 +284,7 @@
   border: 3px solid black;
   background: black;
   color: #EAB543;
-  font-family: "Raleway", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   animation: overlay2 500ms ease-in-out forwards; }
   .content .close-btn {
@@ -296,11 +299,12 @@
     .content .close-btn:hover {
       transform: scale(1.3); }
   .content .contact {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    font-family: "Raleway", sans-serif; }
+    font-family: "Fira Sans", sans-serif;
+    margin-left: 10px; }
     .content .contact h2 {
-      font-family: "Raleway", sans-serif;
+      font-family: "Fira Sans", sans-serif;
       font-size: 25px; }
     .content .contact span {
       opacity: 0.6; }
@@ -349,7 +353,7 @@
     height: 35px;
     color: black;
     border: 3px solid #EAB543;
-    font-family: "Neucha", sans-serif;
+    font-family: "Raleway", sans-serif;
     cursor: pointer;
     background-color: #636e72; }
     .resume .flip-cv:hover {
@@ -362,7 +366,7 @@
     color: #636e72;
     cursor: pointer;
     transition: all 200ms ease-in-out;
-    font-family: "Raleway", sans-serif; }
+    font-family: "Fira Sans", sans-serif; }
     .resume .close-btn:hover {
       transform: scale(1.2); }
 
@@ -377,7 +381,7 @@
   right: 18%;
   color: #fff;
   font-size: 25px;
-  font-family: "Neucha", sans-serif; }
+  font-family: "Raleway", sans-serif; }
   .weather-display .weather-icon {
     z-index: 1;
     margin-left: 5px;
@@ -388,7 +392,7 @@
   height: 100vh;
   width: 100%;
   text-align: left;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Fira Sans", sans-serif; }
   .splash-2 h2 {
     margin-top: 50px;
     margin-left: 15%; }
@@ -452,9 +456,18 @@
     transform: rotateX(0deg); } }
 /* Responsive Design */
 @media (max-width: 1000px) {
-  #main-view #main-title h1 span {
-    margin-left: 100px;
-    font-size: 18px; }
+  #main-view #main-title {
+    top: 50%;
+    left: 50%; }
+    #main-view #main-title h1 {
+      margin-left: -200px;
+      text-align: center; }
+      #main-view #main-title h1 span {
+        font-size: 18px; }
+    #main-view #main-title h2 {
+      margin-left: -105px;
+      width: 210px;
+      font-size: 12px; }
   #main-view nav {
     position: absolute;
     top: 0;
@@ -471,11 +484,32 @@
 @media (max-width: 768px) {
   body #main-view {
     width: 768px;
-    height: 1024px; } }
+    height: 1024px; }
+  body #main-title {
+    top: 50%;
+    left: 50%; }
+    body #main-title h1 {
+      margin-left: -200px;
+      text-align: center; }
+      body #main-title h1 span {
+        font-size: 18px; }
+    body #main-title h2 {
+      margin-left: -105px;
+      width: 210px;
+      font-size: 12px; } }
 @media (max-width: 414px) {
   body #main-view {
     width: 414px;
-    height: 736px; } }
+    height: 736px; }
+    body #main-view #main-title {
+      width: 100%;
+      top: 0%;
+      right: 0%; }
+      body #main-view #main-title h1 span {
+        font-size: 18px; }
+      body #main-view #main-title h2 {
+        width: 210px;
+        font-size: 12px; } }
 /* Testing */
 
 /*# sourceMappingURL=splash-style.css.map */
